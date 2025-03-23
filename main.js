@@ -1,4 +1,5 @@
 export function knightTravails(start, end) {
+  if (!isValid(start, end)) throw new Error("incorrect arguments");
   const directions = [
     [-2, -1],
     [-2, 1],
@@ -28,4 +29,19 @@ export function knightTravails(start, end) {
     }
   }
   return null;
+}
+
+function isValid(start, end) {
+  if (
+    start[0] < 0 ||
+    start[0] >= 8 ||
+    start[1] < 0 ||
+    start[1] >= 8 ||
+    end[0] < 0 ||
+    end[0] >= 8 ||
+    end[1] < 0 ||
+    end[1] >= 8
+  )
+    return false;
+  return true;
 }
