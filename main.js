@@ -10,7 +10,7 @@ export function knightTravails(start, end) {
     [2, 1],
   ];
 
-  const queue = [[start, [[0, 0]]]];
+  const queue = [[start, [start]]];
   const visited = new Set();
   visited.add(`${start[0]},${start[1]}`);
   while (queue.length > 0) {
